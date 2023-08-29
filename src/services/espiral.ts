@@ -16,7 +16,10 @@ function distancia(vector1: Vector2, vector2: Vector2): number {
   return Math.sqrt((vector1.x - vector2.x) ** 2 + (vector1.y - vector2.y) ** 2);
 }
 
-export function espiral(matriz: PossibleVector2[], distanciaMinima: number = 10, recuo: number = 0.1): Vector2[] {
+export function espiral(matriz: PossibleVector2[], options?: { distanciaMinima?: number , recuo?: number, addFinal?: boolean }): Vector2[] {
+  const distanciaMinima = options?.distanciaMinima ?? 10;
+  const recuo = options?.recuo ?? 0.1;
+  const addFinal = options?.addFinal ?? true;
   let menorDistancia = distanciaMinima;
   const matrizVector = matriz.map((p) => new Vector2(p));
   const final = matrizVector[matrizVector.length - 1];
@@ -33,5 +36,9 @@ export function espiral(matriz: PossibleVector2[], distanciaMinima: number = 10,
     i++;
 
   }
-  return [final, ...espiral]
+
+  if (addFinal)
+    return [final, ...espiral ]
+  else
+    return espiral
 }

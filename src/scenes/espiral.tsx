@@ -31,7 +31,7 @@ export default makeScene2D(function* (view) {
               [0, 250],
               [250, 0],
               [0, -250],
-            ])}
+            ],{addFinal: true})}
           />,
         </Grid>
       </Layout>

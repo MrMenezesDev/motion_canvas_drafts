@@ -1,10 +1,5 @@
 {
   "version": 0,
-  "timeEvents": [
-    {
-      "name": "click",
-      "targetTime": 4.347768627945829
-    }
-  ],
+  "timeEvents": [],
   "seed": 439921454
 }
